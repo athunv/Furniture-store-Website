@@ -1,0 +1,55 @@
+{% extends 'navbar2.html' %}
+{% block nav2 %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container-fluid my-5 d-flex justify-content-center ">
+    <div class="card card-1 mb-3">
+        <div class="card-header bg-white">
+            <div class="media flex-sm-row flex-column-reverse justify-content-between">
+                <div class="col my-auto">
+                    <h4 class="mb-0">Thanks for your Order, <span class="change-color">{{ user.user_name }}</span>!</h4>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row justify-content-between mb-3">
+                <div class="col-auto">
+                    <h6 class="color-1 mb-0 change-color">Orders</h6>
+                </div>
+            </div>
+            {% for i in orders %}
+            <div class="row mb-3 ms-5 me-5">
+                <div class="col">
+                    <div class="card card-2">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="sq align-self-center">
+                                    <img class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0" src="{{ i.product.image.url }}" width="135" height="135" />
+                                </div>
+                                <div class="media-body my-auto text-right">
+                                    <div class="row my-auto flex-column flex-md-row">
+                                        <div class="col my-auto">
+                                            <h6 class="mb-0">{{ i.product.product_name }}</h6>
+                                        </div>
+                                        <div class="col my-auto">
+                                            <small>{{ i.status }}</small>
+                                        </div>
+                                        <div class="col my-auto">
+                                            <h6 class="mb-0">&#8377;{{ i.product.price }}</h6>
+                                        </div>
+                                        <div class="col my-auto">
+                                            <a href="{% url 'ordelete' i.id %}" onclick="return confirm('Are You sure')" class="btn btn-warning">Cancel Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock nav2 %}

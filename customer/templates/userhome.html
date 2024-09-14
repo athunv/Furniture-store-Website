@@ -1,0 +1,207 @@
+{% extends 'navbar.html'%}
+{%block nav%}
+{% load static%}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="https://kit.fontawesome.com/5cce6939b3.js" crossorigin="anonymous"></script>
+<style>
+    .social-icon {
+        color: #ffffff; 
+        transition: color 0.3s ease;
+    }
+    .social-icon1 {
+        color: #ffffff; 
+        transition: color 0.3s ease;
+    }
+    .social-icon:hover {
+        color: #007bff; 
+    }
+    .social-icon1:hover {
+        color: #e050f3; 
+    }
+</style>
+
+    <body id="home">
+
+
+        <div class="row">
+          <img src="{% static 'images/background.png' %}" style="top: 0%;" alt="">
+        </div>
+
+        <div class="row p-5 bg-dark text-white">
+            <div class="col ms-5">
+                <a class="fs-3 text-white" style="text-decoration: none;" href="{% url 'bed'%}">Bed And Matress</a>
+            </div>
+            <div class="col">
+                <a class="fs-3 text-white ms-3" style="text-decoration: none;" href="{% url 'chair'%}">Office Chairs</a>
+            </div>
+            <div class="col">
+                <a class="fs-3 text-white ms-4" style="text-decoration: none;" href="{% url 'sofa'%}">Sofa</a>
+            </div>
+            <div class="col">
+                <a class="fs-3 text-white" style="text-decoration: none;" href="{% url 'Cupboards'%}">Cupboards</a>
+            </div>
+            <div class="col">
+                <a class="fs-3 text-white" style="text-decoration: none;" href="{% url 'ctable'%}">Cofee Table</a>
+            </div>
+        </div>
+        
+        <div class="row p-5">
+            
+            <h4 class="text-center mt-4">BEST SELLING PRODUCTS</h4>
+           <div class="col mt-5">
+                <div class="card shadow" style="width: 18rem; height: 370px;">
+                    <img src="{% static 'images/sofa1.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Corby Sofa</h5>
+                      <p class="card-text">Sub Category : Fabric Sofa1-seater Dimensions : 80.0 cm H x 82.6 cm W x 85.5 cm</p>
+                      <a href="{% url 'detail' 1 %}" style="width: 150px;" class="btn btn-success ms-5">View More</a>
+                    </div>
+                </div>
+           </div>
+
+           <div class="col mt-5">
+                <div class="card shadow" style="width: 18rem; height: 370px;">
+                     <img src="{% static 'images/bed1.jpg'%}" class="card-img-top" alt="...">
+                     <div class="card-body">
+                     <h5 class="card-title">Helena Solid Wood Upholstered Bed </h5>
+                     <p class="card-text">Product Dimensions : 120.0 cm H x 210.0 cm W x 191.0 cm L</p>
+                    <a href="{% url 'detail' 5 %}" class="btn btn-success">View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-5">
+                <div class="card shadow" style="width: 18rem; height: 370px;">
+                     <img src="{% static 'images/chair2.jpg'%}" height="150px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Beaatho Rio</h5>
+                    <p class="card-text">Executive High Back Revolving Office Chair/Director/Desk Chair</p>
+                    <a href="{% url 'detail' 20 %}" class="btn btn-success">View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-5">
+                <div class="card shadow" style="width: 18rem; height: 370px;">
+                    <img src="{% static 'images/ctable.jpg'%}" height="150px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">DECOWORLD</h5>
+                    <p class="card-text">Premium Center Coffee Table || Center Table for Living Room || Modern Furniture </p>
+                    <a href="{% url 'detail' 10 %}" class="btn btn-success ">View More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row p-5 bg-dark text-white">
+            <div class="col ms-5">
+                <h4>Free Delivery</h4>
+            </div>
+            <div class="col">
+                <h4>Lowest Price</h4>
+            </div>
+            <div class="col">
+                <h4>Best Products</h4>
+            </div>
+            <div class="col">
+                <h4>10+ years of Experiance</h4>
+            </div>
+        </div>
+
+        <div class="row d-flext p-5">
+            <div class="col mt-5 ms-5" >
+                <img src="{% static 'images/ads.png'%}" style="width: 650px; height: 500px;"  alt="">
+                <a href=""></a>
+            </div>
+            <div class="col mt-5">
+                <img src="{% static 'images/ads2.png'%}" style="width: 650px; height: 500px; margin-top: -623px; margin-left: 720px;" alt="">
+                <a href=""></a>
+            </div>
+        </div>
+
+        <div class="row p-5 bg-dark text-white">
+            <p class="text-center " style="font-size: xx-large;">Get 50% Off On Your First Shopping!</p>
+        </div>
+
+        <div class="row p-5" id="shop">
+            <h4 class="fs-2 text-center mt-5">Our Shops</h4>
+            <div class="col mt-5">
+                <div class="card shadow ms-5" style="width: 18rem;">
+                    <img src="{% static 'images/shop1.jpeg'%}" class="card-img-top" alt="..." style="height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title">Dream Decor</h5>
+                    <p>MG Road Calicut </p>
+                   </div>
+               </div>
+            </div>
+            <div class="col mt-5">
+                <div class="card shadow" style="width: 18rem;">
+                    <img src="{% static 'images/shop2.jpg'%}" class="card-img-top" alt="..." style="height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title">Dream Shop</h5>
+                    <p>AVK Nair Road Kannur</p>
+                   </div>
+               </div>
+            </div>
+            <div class="col mt-5">
+                <div class="card shadow" style="width: 18rem;">
+                    <img src="{% static 'images/shop3.jpeg'%}" class="card-img-top" alt="..." style="height: 150px;">
+                    <div class="card-body">
+                    <h5 class="card-title">Dream Maker</h5>
+                    <p>Near Old Bus stand Thalassery</p>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+
+<!-- About Section -->
+<div class="row bg-dark text-white w-100 py-5" id="about">
+    <div class="col-12 text-center mb-4">
+        <h2>About Dream Decore</h2>
+        <p>At Dream Decore, we believe in providing high-quality, eco-friendly furniture at the best prices. Our mission is to help you create a beautiful, sustainable home.</p>
+    </div>
+    <div class="col-lg-4 col-md-6 text-center mb-4">
+        <h4 class="mb-3">Eco-Friendly</h4>
+        <p>Decorate your home with eco-friendly furniture.</p>
+    </div>
+    <div class="col-lg-4 col-md-6 text-center mb-4">
+        <h4 class="mb-3">Unbelievable Quality</h4>
+        <p>We choose raw materials from the best manufacturers.</p>
+    </div>
+    <div class="col-lg-4 col-md-6 text-center mb-4">
+        <h4 class="mb-3">Best Price</h4>
+        <p>Get the best price for your home furniture.</p>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<div class="row bg-dark text-white w-100 py-4">
+    <div class="col-lg-4 col-md-6 text-center mb-3">
+        <p>&copy; 2014 Dream Decore</p>
+        <p>All Rights Reserved</p>
+    </div>
+    <div class="col-lg-4 col-md-6 text-center mb-3">
+        <p>Designed By: Dream Decore</p>
+        <p>Visit your nearest Decore soon.</p>
+    </div>
+    <div class="col-lg-4 col-md-12 text-center mb-3">
+        <p>Follow us on</p>
+        <a href="#" class="social-icon me-3"><i class="fa-brands fa-facebook fa-2x"></i></a>
+        <a href="#" class="social-icon1 me-3"><i class="fa-brands fa-instagram fa-2x"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-twitter fa-2x"></i></a>
+    </div>
+    <div class="col-12 text-center mt-4">
+        <h4 class="mb-3">Subscribe to Our Newsletter</h4>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control w-50 mx-auto" id="newsletterEmail" placeholder="Enter your email">
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+
+{%endblock nav%}      

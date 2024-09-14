@@ -1,0 +1,27 @@
+{% extends 'navbar2.html'%}
+{%block nav2%}
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{product.image.url}}" alt="..." /></div>
+            <div class="col-md-6">
+                <!-- <div class="small mb-1">ID :{{product.id}}</div> -->
+                <h1 class="display-5 fw-bolder">{{product.product_name}}</h1>
+                <h4 class=" fw-bolder">{{product.category}}</h4>
+                <div class="fs-5 mb-5">
+                    
+                    <span class="text-dark">Rs : {{product.price}}</span>
+                </div>
+                <p class="lead">{{product.desc}}</p>
+                <div>
+                    <a href="{% url 'addtocart' product.id %}" class="btn btn-dark ">Add to Cart</a>
+                    <a href="{% url 'all' %}" class="btn btn-dark"> Back to Products</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock nav2%}

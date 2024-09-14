@@ -1,0 +1,27 @@
+{% extends 'navbar2.html' %}
+
+{% block nav2 %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+<div class="container-fluid p-5">
+    <h4>{{i.category}}</h4>
+    <div class="row">
+        {% for i in products %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3">
+            <div class="card shadow" style="width: 100%; height: 100%;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="Product Image" style="height: 160px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ i.product_name }}</h5>
+                    <p class="card-text">M.R.P  ₹{{ i.price }}</p>
+                    <div class="mt-auto">
+                        <a href="{% url 'detail' i.id %}" class="btn btn-success mb-2">View Details</a>
+                        <a href="{% url 'addtocart' i.id %}" class="btn btn-dark">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock nav2 %}

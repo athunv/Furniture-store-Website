@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static%}
+    <title>Become a Seller</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <style>
+        img {
+            width: 200px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg text-dark  " style="background-color: rgb(253, 250, 247); " >
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="{% url 'userhome'%}"><img src="{% static 'images/logo1.png'%}" style="height: 100px; width: 100px;" alt=""></a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 600px;">
+                  <li class="nav-item ms-3">
+                    <a class="nav-link active" aria-current="page" href="">Home</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="#list">Product Listing</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="#add">Add Product</a>
+                  </li>
+                  <li class="nav-item ms-5">
+                    <a class="nav-link" href="{% url 'productlist' %}">Products</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class=" mt-5">
+        <div class="text-center">
+            <h1>Become a Seller</h1>
+            <h3>Join our marketplace and start selling your products to a wide audience.</h3>
+        </div>
+        <div class="mt-5 container">
+            <h2>Categories</h2>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-3 ">
+                    <img src="{%static 'images/bed4.jpg'%}" class="img-fluid" alt="Bed and Mattress">
+                    <p>Bed and Mattress</p>
+                </div>
+                <div class="col-md-2 ">
+                    <img src="{% static 'images/ctable5.jpg'%}" class="img-fluid" alt="Coffee Table">
+                    <p>Coffee Table</p>
+                </div>
+                <div class="col-md-2 ">
+                    <img src="{% static 'images/cupboard2.jpg'%}" class="img-fluid" alt="Cupboards">
+                    <p>Cupboards</p>
+                </div>
+                <div class="col-md-2 ">
+                    <img src="{% static 'images/chair2.jpg'%}" class="img-fluid" alt="Office Chairs">
+                    <p>Office Chairs</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="{% static 'images/sofa1.jpg'%}" class="img-fluid" alt="Sofa">
+                    <p>Sofa</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 10px; background-color: antiquewhite;" class="mt-5"></div>
+
+        <div class="mt-5 container p-5" id="list">
+            <h2 class="text-center">Product Listing Methods</h2>
+            <p class="container p-5">What is a listing? A listing refers to the process of registering your product on our platform, making it
+                visible to customers, and enabling them to view and purchase your product. It involves creating a
+                detailed product page that includes essential information such as product title, description, images,
+                pricing. A well-crafted listing helps attract potential customers .</p>
+        </div>
+
+        <div style="height: 10px; background-color: antiquewhite;" class="mt-5"></div>
+
+
+        <div class="mt-5 container border border-shadow p-5" id="add">
+            <h2>Add a Product</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="product_name" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="product_name" name="product_name">
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category">
+                        <option value="Bed and Mattress">Bed and Mattress</option>
+                        <option value="Coffee Table">Coffee Table</option>
+                        <option value="Cupboards">Cupboards</option>
+                        <option value="Office Chairs">Office Chairs</option>
+                        <option value="Sofa">Sofa</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" name="price">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Product Image</label>
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                </div>
+                <div class="mb-3">
+                    <img id="image_preview" src="#" alt="Product Image" class="img-fluid" style="display: none;">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+        </div>
+    </main>
+    <footer class="text-center  mt-5">
+        <div class="bg-dark text-white d-flex align-items-center justify-content-center" style="height: 70px;">
+            <p>© 2023 DreamDecore. All Rights Reserved</p>
+
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
